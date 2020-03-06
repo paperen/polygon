@@ -22,7 +22,7 @@
 * 为方便入手，你可以先复制以下SQL到库里执行
 
     
-    CREATE TABLE `test` (
+        CREATE TABLE `test` (
           `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
           `username` varchar(50) DEFAULT NULL COMMENT '用户名',
           `password` char(32) DEFAULT NULL COMMENT '密码',
