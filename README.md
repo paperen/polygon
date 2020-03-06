@@ -23,29 +23,28 @@
 
     
     CREATE TABLE `test` (
-      `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-      `username` varchar(50) DEFAULT NULL COMMENT '用户名',
-      `password` char(32) DEFAULT NULL COMMENT '密码',
-      `salt` char(6) DEFAULT NULL COMMENT '密码盐',
-      `last_login` int(10) unsigned DEFAULT NULL COMMENT '上次登录时间戳',
-      `username_en` varchar(255) DEFAULT NULL COMMENT '用户名（英文）',
-      `enabled` tinyint(1) unsigned DEFAULT '1' COMMENT '是否启用（0-否 1-是）',
-      PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-    
+          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+          `username` varchar(50) DEFAULT NULL COMMENT '用户名',
+          `password` char(32) DEFAULT NULL COMMENT '密码',
+          `salt` char(6) DEFAULT NULL COMMENT '密码盐',
+          `last_login` int(10) unsigned DEFAULT NULL COMMENT '上次登录时间戳',
+          `username_en` varchar(255) DEFAULT NULL COMMENT '用户名（英文）',
+          `enabled` tinyint(1) unsigned DEFAULT '1' COMMENT '是否启用（0-否 1-是）',
+          PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-    CREATE TABLE `admin` (
-      `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-      `username` varchar(50) DEFAULT NULL COMMENT '用户名',
-      `password` char(32) DEFAULT NULL COMMENT '密码',
-      `salt` char(6) DEFAULT NULL COMMENT '密码盐',
-      `last_login` int(10) unsigned DEFAULT NULL COMMENT '上次登录时间戳',
-      `username_en` varchar(255) DEFAULT NULL COMMENT '用户名（英文）',
-      `enabled` tinyint(1) unsigned DEFAULT '1' COMMENT '是否启用（0-否 1-是）',
-      PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-    
-    INSERT INTO `admin` VALUES ('1', 'test', '1234', '1234', '1234', 'test_en', '1');
+        CREATE TABLE `admin` (
+          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+          `username` varchar(50) DEFAULT NULL COMMENT '用户名',
+          `password` char(32) DEFAULT NULL COMMENT '密码',
+          `salt` char(6) DEFAULT NULL COMMENT '密码盐',
+          `last_login` int(10) unsigned DEFAULT NULL COMMENT '上次登录时间戳',
+          `username_en` varchar(255) DEFAULT NULL COMMENT '用户名（英文）',
+          `enabled` tinyint(1) unsigned DEFAULT '1' COMMENT '是否启用（0-否 1-是）',
+          PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+        
+        INSERT INTO `admin` VALUES ('1', 'test', '1234', '1234', '1234', 'test_en', '1');
 
 * 然后访问`/api/scaffold`，会自动生成出admin模型（位于api/models目录）
 * 访问`/api/admin`、`/api/admin_detail?id=1`查看输出结果（查询）
