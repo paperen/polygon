@@ -59,7 +59,7 @@ function get($key, $clean=TRUE, $default=NULL) {
  * @param string $level
  */
 function save_log($msg, $level=Constance::LOG_DEBUG) {
-	if ( ENV == Constance::ENV_DEVELOP ) {
+	if ( ENV == Constance::ENV_DEVELOP || (ENV != Constance::ENV_DEVELOP && $level==Constance::LOG_ERR) ) {
 		$time = date('H:i:s');
 		$log_file = 'log_'.date('ymd').'.log';
 		$fp = fopen(ROOT . 'cache' . DIRECTORY_SEPARATOR . $log_file, 'a+');

@@ -239,3 +239,13 @@
     $exclude = array('test');
     scaffold::run('api', $exclude);
     
+## 日志
+
+可以调用全局`save_log`方法打日志
+
+在develop环境里100%会生成日志cache目录，对于非develop环境仅在错误等级为error才会记录到日志
+
+|参数|说明|必填|
+|:----     |-----  |----- |
+|$msg|日志内容   |是|
+|$level  | 日志等级，默认为debug   |否|
