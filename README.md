@@ -45,9 +45,6 @@
       PRIMARY KEY (`id`)
     ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
     
-    -- ----------------------------
-    -- Records of admin
-    -- ----------------------------
     INSERT INTO `admin` VALUES ('1', 'test', '1234', '1234', '1234', 'test_en', '1');
 
 * 然后访问`/api/scaffold`，会自动生成出admin模型（位于api/models目录）
